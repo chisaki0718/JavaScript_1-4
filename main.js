@@ -3,23 +3,23 @@ const title = '========================\n現在持っているタスクの一覧
 
 const tasks = [
   {
-    contents: '机を片付ける',
+    name: '机を片付ける',
     genre: '掃除'
   },
   {
-    contents: '牛乳を買う',
+    name: '牛乳を買う',
     genre: '買い物'
   },
   {
-    contents: '散歩する',
+    name: '散歩する',
     genre: '運動'
   }
 ];
 
 // タスクリスト用関数
 const showTasksList = tasks => {
-  tasks.forEach((element, index) => {
-    console.log(`${index}：[内容]${element.contents}、[ジャンル]${element.genre}`)
+  tasks.forEach((task, index) => {
+    console.log(`${index}：[内容]${task.name}、[ジャンル]${task.genre}`)
   });
 };
 
@@ -28,9 +28,9 @@ console.log(title);
 showTasksList(tasks);
 
 //「タスクとジャンルを入力する欄がある」の定数
-const content = window.prompt('タスクを入力してください');
-const genreItem = window.prompt('ジャンルを入力してください');
-const task = { contents: content, genre: genreItem };
+const taskName = prompt('タスクを入力してください');
+const genre = prompt('ジャンルを入力してください');
+const task = { name: taskName, genre };
 
 //タスクの内容を入力するとタスクが追加され、一覧表示される
 const addTask = task => {
